@@ -27,7 +27,7 @@ const BG_WHITE = PREFIX + "[47m";
 // - we can put expressions inside ${} in a string to insert the values
 console.log(`Hello ${FG_YELLOW}BOB${RESET}.`);
 
-console.log(`Hello ${BG_CYAN}${FG_YELLOW}"%s"${RESET}.`);
+console.log(`Hello ${BG_CYAN}${FG_YELLOW}BOB${RESET}.`);
 
 
 //console.log("Hello " + FG_YELLOW + %s + RESET + ".", username);

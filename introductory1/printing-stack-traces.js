@@ -8,8 +8,8 @@ function bar() {
     console.log("bar");
     other();
 
-    console.log("closing bar");
-    console.trace();
+    // console.log("closing bar");
+    // console.trace();
 }
 
 function other() {
