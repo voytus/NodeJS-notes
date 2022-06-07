@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('http'); //require('http').METHODS //-LIST of all supported methods
 const URL = require('url'); // URL module allows us to parse URLs for their path and query parameters, amongst other things
 const fs = require('fs').promises;
 
@@ -21,16 +21,16 @@ const serve = (request, response, file) => {
 // newer way of getting the body data than shown in app-request-body-data.js
 // - the async keyword states that this function may not return a value straight away
 const getBody = async (request, response) => {
-    // each buffer in buffers represents a chunk of data in the request body
-    const buffers = [];
+    // each buffer in buffers represents a chunk of data in the request body //instead of string ARRAY
+    const buffers = []; //concatinate a string 
 
-    // iterate over that data, wait for it if necessary
+    // iterate over that data, wait for it if necessary for each chunk
     // - await does the waiting (asynchronously)
     for await (const chunk of request) {
         buffers.push(chunk);
     }
     const data = Buffer.concat(buffers).toString(); // transform the buffers into a JSON string
-    return (JSON.parse(data)); // return the JSON string as a JS object
+    return (JSON.parse(data)); // return the JSON string as a JS object 
 }
 
 const notFound = (request, response) => {
@@ -44,18 +44,18 @@ const notSupported = (request, response) => {
     response.setHeader('Content-type', 'text/html');
     response.end(`<h1>Method ${request.method} not allowed</h1>`);
 }
-
+//handling a path name
 const handleGet = (request, response, url) => {
     switch (url.pathname) {
-        case "/":
-            serve(request, response, "index.html");
+        case "/": //root pathname
+            serve(request, response, "index.html"); /return a path
             break;
         default:
-            notFound(request, response);
+            notFound(request, response); //otherwise not found 
             break;
     }
 }
-
+// asyn f-n becouse getBody is a request f-n while wiating and send is back as body
 const handlePost = async (request, response, url) => {
     switch (url.pathname) {
         case "/":
@@ -72,7 +72,7 @@ const handlePost = async (request, response, url) => {
             break;
     }
 }
-
+//handling a method instead a path name
 const requestHandler = (request, response) => {
     const url = URL.parse(request.url, true);
 
@@ -91,8 +91,7 @@ const requestHandler = (request, response) => {
 
 // create the server and assign it a request handler
 // - the request handler is a callback function which accepts two parameters, request and response
-const server = http.createServer(requestHandler);
-
+const server = http.createServer(requestHandler); //requestHandler === (request, repsonse)
 // start the server
 // - call the listen() method on the server object
 server.listen(port, host, () => {
