@@ -7,15 +7,15 @@
 // - peek(): return the item on top of the stack but don't remove it from the stack
 
 class Stack {
-
+//                      setting up a DYNAMIC array without capacity
     constructor() {
         this.items = [];
     }
-
+//                      defining methods accepts and adding 
     push(element) {
         this.items.push(element);
     }
-
+//                      moves the top elemement
     pop() {
         return this.items.pop();
     }
