@@ -23,8 +23,7 @@ const BG_CYAN = PREFIX + "[46m";
 const BG_WHITE = PREFIX + "[47m";
 
 
-//console.log(`"${FG_GREEN}${BG_WHITE}Hello${RESET} %s, username"`);
+console.log(`${FG_GREEN}${BG_WHITE}Hello${RESET} %s`, username);
+// console.log("`${FG_GREEN}${BG_WHITE}Hello${RESET} %s, username`");
 
-//console.log("`${FG_GREEN}${BG_WHITE}Hello${RESET} %s, username`");
-
-console.log("${FG_GREEN}${BG_WHITE}Hello${RESET} %s, username");
+// console.log("${FG_GREEN}${BG_WHITE}Hello${RESET} %s`, username);
