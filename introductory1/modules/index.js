@@ -1,11 +1,13 @@
 const Animal = require('./Animal'); // use the 'require' keyword to import a module that has been exported,
 //  we don't need the file type .js
+
+// if only importing a function from a module, we must specify curly braces  around it
 const { isEven } = require('./helpers');
+// CURLY BRACKETS ARROUND
 
 
 const helpers = require('./helpers');
-// if only importing a function from a module, we must specify curly braces
-// around it
+
 //create new animal and printing to the console
 const animal = new Animal("Duck");
 console.log(animal);

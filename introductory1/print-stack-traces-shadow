@@ -8,8 +8,8 @@ function bar() {
     console.log("bar"); //stdout "bar"
     other();            //call other f-n
 
-    console.log("command to run within a f-n");
-    console.trace();
+    console.log("command to run within a f-n to TRACK where posistion in the f-n");
+    console.trace(); //prints all functions called in the stack up to this point
 }
 
 function other() {
