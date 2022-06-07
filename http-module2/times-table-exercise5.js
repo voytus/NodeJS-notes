@@ -22,7 +22,9 @@ const table = (request, response) => {
     const range = url.query.range || 12; // default to range of 12
 
     response.statusCode = 200; 
-    
+    response.setHeader('Content-type', 'text/html');
+
+
     // Implement an appropriate response for this method
     // - the response should be a HTML list of elements, indicating the operation
     //   as follows: <li>table * numInRange = product</li>
@@ -33,7 +35,10 @@ const table = (request, response) => {
     // - 12 * 2 = 24
     // etc...
     // HINT: You can build up a response of HTML by repeatedly calling response.write(html), this will not return the response.
-
+    response.write('<ul>');
+    for (let i = 1; i <= range; i ++) {
+        response.write(`<li>${table} * ${range} = ${table * i}</li>`);
+    }
     response.end(); // return the response.
 }
 

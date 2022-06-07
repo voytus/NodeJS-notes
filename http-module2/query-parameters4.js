@@ -18,7 +18,7 @@ const notFound = (request, response) => {
 
 const info = (request, response) => {
     // parse the url
-    const url = URL.parse(request.url, true);
+    const url = URL.parse(request.url, true); // the second argument, true indicating the query parameters into url.query
     // we can access query parameters via url.query
     // If the request was: localhost/info?country=England
     // - we can access country via url.query.country
@@ -32,9 +32,9 @@ const info = (request, response) => {
     response.statusCode = 200;
     
     // writing to a response does not send the response back
-    response.write(`<p>The country is ${country}</p>`);
+    response.write(`<p>The country is ${country}</p>`); //nonterminal operation doesn't send it back
 
-    // now send the response back
+    // terminal opertation which now send the response back
     response.end();
 }
 
