@@ -17,19 +17,19 @@ const serve = (request, response, file) => {
         notFound(request, response);
       });
 }
-
+// create a chunks of data (1 chonk username, 2 chonk password, 3 chunk) to capture while coming across with a bucklet
 const returnBodyData = (request, response) => {
     let data = '';
 
     // request.on() accepts an event and a callback function to bind to that event
     request.on('data', chunk => {
         // the data event means their is data in the requests body
-        data += chunk; // builds up a JSON string from the request body
+        data += chunk; // builds up a JSON string from the request body ADDED every each time chunk of data received
     })
     request.on('end', () => {
-        // the end event signifies the body has finished being read
-        console.log(JSON.parse(data));
-        response.setHeader('Content-type', 'application/json');
+        // the end event signifies the body has finished being read / when all data has been received
+        console.log(JSON.parse(data));  //print data
+        response.setHeader('Content-type', 'application/json'); //return data as received
         response.end(data);
     });
 }

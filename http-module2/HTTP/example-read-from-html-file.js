@@ -1,8 +1,10 @@
 
 const fs = require('fs');
+//const path = require('path');
+
 const requestHandler = (req, res) => {
 
-    fs.readFile(_dirname + 'index.html', (err, data) => {
+    fs.readFile(__dirname + 'index.html', (err, data) => {
         if (err) {
             console.error(err.message);
             res.statusCode = 404;
@@ -12,6 +14,7 @@ const requestHandler = (req, res) => {
         };
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
-});
+        res.end(data);
+    });
 }
 

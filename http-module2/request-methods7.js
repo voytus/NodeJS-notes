@@ -1,4 +1,4 @@
-const http = require('http'); //require('http').METHODS //-LIST of all supported methods
+const http = require('http'); //require('http').METHODS .STATUS_CODES//-LIST of all supported methods/STATUS_CODES
 const URL = require('url'); // URL module allows us to parse URLs for their path and query parameters, amongst other things
 const fs = require('fs').promises;
 
