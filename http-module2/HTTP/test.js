@@ -18,3 +18,26 @@ const server = http.createServer((req, res) => { //method to create an instance 
 server.listen(port, hostname, () => {
     console.log(`Server is running at http://${hostname}:${port}/`);
 })
+/*POSTMAN GET/POST/ANY request returns:
+Hello World
+
+-- Inbound Request --
+IP adress: undefined
+Request URL: $(req.url}
+Request method: GET
+
+-- Inbound Request --
+IP adress: undefined
+Request URL: $(req.url}
+Request method: POST
+
+-- Inbound Request --
+IP adress: undefined
+Request URL: $(req.url}
+Request method: DELETE
+
+-- Inbound Request --
+IP adress: undefined
+Request URL: $(req.url}
+Request method: COPY
+*/
