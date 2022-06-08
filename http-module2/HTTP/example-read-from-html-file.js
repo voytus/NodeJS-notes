@@ -1,10 +1,10 @@
-
+'use-strict'
 const fs = require('fs');
 //const path = require('path');
 
 const requestHandler = (req, res) => {
 
-    fs.readFile(__dirname + 'index.html', (err, data) => {
+    fs.readFile(__dirname + '/index.html', (err, data) => {
         if (err) {
             console.error(err.message);
             res.statusCode = 404;
